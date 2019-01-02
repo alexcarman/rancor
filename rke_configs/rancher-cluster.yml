@@ -1,0 +1,22 @@
+nodes:
+  - address: put_host_address_here
+    user: rancher
+    role: [controlplane,etcd,worker]
+    ssh_key_path: ~/.ssh/id_rsa.rancher
+  - address: put_host_address_here
+    user: rancher
+    role: [controlplane,etcd,worker]
+    ssh_key_path: ~/.ssh/id_rsa.rancher
+  - address: put_host_address_here
+    user: rancher
+    role: [controlplane,etcd,worker]
+    ssh_key_path: ~/.ssh/id_rsa.rancher
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+network:
+  plugin: calico
